@@ -4,8 +4,16 @@
     color: #ceb59c;
 }
 
+svg {
+    color: #e7dfcf;
+    fill: #e7dfcf;
+    padding: 0px;
+    margin: 0px;
+}
+
 body {
     background: #11151a;
+    min-width: 590px;
 }
 
 h1 {
@@ -44,7 +52,6 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
 }
 
 .hlayout>* {
@@ -82,16 +89,18 @@ h1 {
     justify-content: center;
     align-items: center;
     width: max(250px, 30vw);
+
     & a {
         margin: 5px 5px 5px 5px;
         text-decoration: none;
     }
+
     & li {
         border-color: #00000000;
         border-style: solid;
         border-width: 5px;
         border-radius: 10px;
-        position:relative;
+        position: relative;
         background-color: #11151a;
         background-clip: padding-box;
 
@@ -104,10 +113,11 @@ h1 {
             left: 0;
             z-index: -1;
             margin: -5px;
-            border-width:5px;
+            border-width: 5px;
             border-radius: 10px;
 
         }
+
         padding: 5px;
     }
 
@@ -162,19 +172,10 @@ nav {
     }
 
     & a {
-        isolation: isolate;
-        text-decoration: none;
-        mix-blend-mode: normal;
         display: block;
+        text-decoration: none;
         margin: 10px 5px 10px 5px;
         color: #e7dfcf;
-        background: #0000;
-        border-width: 0px;
-    }
-
-    & svg {
-        color: #e7dfcf;
-        fill: #e7dfcf;
     }
 }
 
@@ -271,12 +272,28 @@ footer {
 
     & ul {
         list-style: none;
+        overflow: hidden;
+        background: #0000;
     }
 
     & li {
-        margin: 0px;
+        float: left;
+        background: #0000;
         display: flex;
-        float: left
+        mix-blend-mode: normal;
+        margin: 0px 5px 0px 5px;
+        padding: 0px 5px 0px 5px;
+        border-radius: 5px;
+    }
+
+    & li:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    & a {
+        text-decoration: none;
+        margin: 10px 5px 10px 5px;
+        color: #e7dfcf;
     }
 }
 
@@ -291,4 +308,67 @@ footer {
 .MailIcon path {
     d: path("M440.917,67.925H71.083C31.827,67.925,0,99.752,0,139.008v233.984c0,39.256,31.827,71.083,71.083,71.083 h369.834c39.255,0,71.083-31.827,71.083-71.083V139.008C512,99.752,480.172,67.925,440.917,67.925z M178.166,321.72l-99.54,84.92 c-7.021,5.992-17.576,5.159-23.567-1.869c-5.992-7.021-5.159-17.576,1.87-23.567l99.54-84.92c7.02-5.992,17.574-5.159,23.566,1.87 C186.027,305.174,185.194,315.729,178.166,321.72z M256,289.436c-13.314-0.033-26.22-4.457-36.31-13.183l0.008,0.008l-0.032-0.024 c0.008,0.008,0.017,0.008,0.024,0.016L66.962,143.694c-6.98-6.058-7.723-16.612-1.674-23.583c6.057-6.98,16.612-7.723,23.582-1.674 l152.771,132.592c3.265,2.906,8.645,5.004,14.359,4.971c5.706,0.017,10.995-2.024,14.44-5.028l0.074-0.065l152.615-132.469 c6.971-6.049,17.526-5.306,23.583,1.674c6.048,6.97,5.306,17.525-1.674,23.583l-152.77,132.599 C282.211,284.929,269.322,289.419,256,289.436z M456.948,404.771c-5.992,7.028-16.547,7.861-23.566,1.869l-99.54-84.92 c-7.028-5.992-7.861-16.546-1.869-23.566c5.991-7.029,16.546-7.861,23.566-1.87l99.54,84.92 C462.107,387.195,462.94,397.75,456.948,404.771z");
     fill: #e7dfcf;
+}
+
+
+.arrows-hide {
+    opacity: 0;
+}
+
+.arrows {
+    transition: opacity .25s ease;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-left: calc(30px/3) solid #ceb59cb6;
+        border-bottom: calc(30px/3) solid #ceb59cb6;
+        transform: translate(calc(30px/3), calc(30px*4/3))rotate(-45deg);
+        animation: arrows 3s linear infinite;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-left: calc(30px/3) solid #ceb59cb6;
+        border-bottom: calc(30px/3) solid #ceb59cb6;
+        transform: translate(calc(30px*2/3), 0px)rotate(-45deg);
+        animation: arrows 3s linear infinite calc(3s/-2);
+    }
+}
+
+@keyframes arrows {
+    0% {
+        border-left: calc(30px/3) solid #ceb59c00;
+        border-bottom: calc(30px/3) solid #ceb59c00;
+        transform: translate(calc(30px/-6), calc(30px*4/-6))rotate(-45deg);
+    }
+
+    10%,
+    90% {
+        border-left: calc(30px/3) solid #ceb59c00;
+        border-bottom: calc(30px/3) solid #ceb59c00;
+    }
+
+    50% {
+        border-left: calc(30px/3) solid #ceb59cb6;
+        border-bottom: calc(30px/3) solid #ceb59cb6;
+        transform: translate(calc(30px/-6), 0px)rotate(-45deg);
+    }
+
+    100% {
+        border-left: calc(30px/3) solid #ceb59c00;
+        border-bottom: calc(30px/3) solid #ceb59c00;
+        transform: translate(calc(30px/-6), calc(30px*4/6))rotate(-45deg);
+    }
 }

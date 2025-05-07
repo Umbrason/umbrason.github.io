@@ -6,7 +6,8 @@
     <title>Umbrason's Portfolio </title>
 </head>
 
-<body>
+<body onScroll="if(window.pageYOffset == 0) document.getElementById('scrollArrow').classList.remove('arrows-hide')
+                else document.getElementById('scrollArrow').classList.add('arrows-hide')">
     <nav>
         <ul>
             <li> <a href="#top"> About </a> </li>
@@ -55,6 +56,7 @@
                     </p>
                 </div>
             </div>
+            <div class="arrows" id="scrollArrow"></div>
         </div>
     </div>
 
@@ -509,7 +511,7 @@
                         <svg class="DiscordIcon" width="32px" height="32px" viewBox="0 -28.5 256 256">
                             <path />
                         </svg>
-                        Discord
+                        @Umbrason
                     </div>
                 </a>
             </li>
