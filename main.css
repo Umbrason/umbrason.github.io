@@ -259,6 +259,7 @@ nav {
 
     &>h3 {
         height: 50px;
+        padding:0px 10px 0px 10px;
         text-align: center;
         text-justify: auto;
         align-content: center;
@@ -273,8 +274,8 @@ nav {
 
 .portfolio-item:hover {
     &>.portfolio-description:hover {
-        top: 100px;
-        height: 150px;
+        top: 75px;
+        height: 175px;
     }
 
     &>.portfolio-thumbnail-static {
