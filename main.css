@@ -283,7 +283,7 @@ nav {
         border-radius: 20px;
         background: rgba(0,0,0, 0.5);
         /* box-shadow: 0 6px 12px 12px rgba(0,0,0, 0.4); */
-        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
         will-change: opacity;
         transform-origin: top center;
         transform: skewX(.001deg);
@@ -334,8 +334,6 @@ nav {
         margin: 0px 15px 0px 15px;
     }
 }
-
-.portfolio-item:hover {}
 
 footer {
     box-shadow: 100px 100px 100px 100px #090513af;
